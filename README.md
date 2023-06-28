@@ -5,7 +5,6 @@ menggunakan MySQL. Pastikan MySQL Server sudah dapat dijalankan melalui XAMPP.</
 
 # Membuat Database & Table
 ## Studi Kasus Data Artikel
-![Studi Kasus](img/studi_kasus.png)
 
 1. Buat Database baru dengan nama `lab4_ci` dengan query berikut.
 ```sql
@@ -28,8 +27,6 @@ CREATE TABLE artikel (
 <p>Selanjutnya membuat konfigurasi untuk menghubungkan dengan Database Server. Konfigurasi dapat
 dilakukan dengan dua cara: yaitu pada file app/config/database.php atau menggunakan file .env.
 Pada praktikum ini kita gunakan konfigurasi pada file .env.</p>
-
-![konfigurasi Database](img/konfigurasi_database.png)
 
 # Membuat Model
 <p>Selanjutnya adalah membuat Model untuk memproses data Artikel. Buat file baru pada direktori
@@ -101,8 +98,6 @@ else : ?>
 
 - Selanjutnya buka browser kembali, dengan mengakses url http://localhost:8080/artikel
 
-![Tampilan Web](img/tampilan_web.png)
-
 <p>Belum ada data yang ditampilkan. Kemudian coba tambahkan beberapa data pada database agar dapat
 ditampilkan datanya.</p>
 
@@ -120,8 +115,6 @@ mencapai lebih dari 2000 tahun.', 'artikel-kedua');
 ```
 
 - Refresh kembali browser, sehingga akan ditampilkan hasilnya.
-
-![Tampilan Artikel](img/tampilan_artikel.png)
 
 # Membuat Tampilan Detail Artikel
 <p>Tampilan pada saat judul berita di klik maka akan diarahkan ke halaman yang berbeda. Tambahkan
@@ -168,8 +161,6 @@ return view('artikel/detail', compact('artikel', 'title'));
 ```php
 $routes->get('/artikel/(:any)', 'Artikel::view/$1');
 ```
-
-![Detail Artikel](img/detail_artikel.png)
 
 # Membuat Menu Admin
 - Menu Admin adalah untuk proses CRUD data artikel. Buat method baru pada Controller Artikel dengan
@@ -246,8 +237,6 @@ $routes->group('admin', function($routes) {
 
 - Akses menu admin dengan url http://localhost:8080/admin/artikel
 
-![Admin Index](img/admin_index.png)
-
 # Menambah Data Artikel
 - Tambahkan fungsi/method baru pada Controller Artikel dengan nama add().
 
@@ -296,8 +285,6 @@ return view('artikel/form_add', compact('title'));
 <?= $this->include('template/admin_footer'); ?>
 ```
 
-![Tambah Artikel](img/tambah_artikel.png)
-
 # Mengubah Data
 - Tambahkan fungsi/method baru pada Controller Artikel dengan nama edit().
 
@@ -341,8 +328,6 @@ $data['isi'];?></textarea>
 </form>
 <?= $this->include('template/admin_footer'); ?>
 ```
-
-![Edit Artikel](img/edit_artikel.png)
 
 # Menghapus Data
 <p>Tambahkan fungsi/method baru pada Controller Artikel dengan nama delete().</p>
